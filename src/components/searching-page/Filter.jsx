@@ -6,10 +6,10 @@ function Filter() {
         <label for="tipe">Tipe:</label>
         <select id="tipe" name="tipe">
           <option value="">Semua</option>
-          <option value="1">Universitas</option>
-          <option value="2">Politeknik</option>
-          <option value="2">Institut</option>
-          <option value="3">Akademi</option>
+          <option value="Universitas">Universitas</option>
+          <option value="Politeknik">Politeknik</option>
+          <option value="Institut">Institut</option>
+          <option value="Akademi">Akademi</option>
         </select>
 
         <label for="provinsi">Provinsi:</label>
@@ -34,9 +34,9 @@ function Filter() {
         <label for="fakultas">Fakultas:</label>
         <select id="fakultas" name="fakultas">
           <option value="">Semua</option>
-          <option value="teknik">Teknik</option>
-          <option value="ekonomi">Ekonomi</option>
-          <option value="hukum">Hukum</option>
+          <option value="Teknik">Teknik</option>
+          <option value="Ekonomi">Ekonomi</option>
+          <option value="Hukum">Hukum</option>
         </select>
 
         <input type="submit" value="Filter" />
