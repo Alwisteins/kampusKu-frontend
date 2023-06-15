@@ -1,6 +1,6 @@
-import Navbar from "../../components/navbar/Navbar";
-import Filter from "../../components/searching-page/Filter";
-import Result from "../../components/searching-page/Result";
+import Navbar from "components/navbar/Navbar";
+import Filter from "components/searching-page/Filter";
+import Result from "components/searching-page/Result";
 import "./kampus.scss";
 
 function Kampus() {

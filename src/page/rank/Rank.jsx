@@ -1,5 +1,5 @@
-import Navbar from "../../components/navbar/Navbar";
-import List from "../../components/ranking-page/List";
+import Navbar from "components/navbar/Navbar";
+import List from "components/ranking-page/List";
 import "./rank.scss";
 
 function Rank() {

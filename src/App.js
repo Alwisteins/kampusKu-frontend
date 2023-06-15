@@ -1,8 +1,8 @@
-import Home from "./page/home/Home";
-import Rank from "./page/rank/Rank";
-import Kampus from "./page/search/Kampus";
-import About from "./page/about/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "page/home/Home";
+import Rank from "page/rank/Rank";
+import Kampus from "page/search/Kampus";
+import About from "page/about/About";
 
 function App() {
   return (
