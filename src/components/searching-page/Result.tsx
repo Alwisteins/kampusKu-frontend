@@ -1,34 +1,35 @@
 //sample data
-const data = [
-  {
-    name: "Kampus A",
-    location: "kampus location",
-    image: "some image link here",
-  },
-  {
-    name: "Kampus B",
-    location: "kampus location",
-    image: "some image link here",
-  },
-  {
-    name: "Kampus C",
-    location: "kampus location",
-    image: "some image link here",
-  },
-  {
-    name: "Kampus B",
-    location: "kampus location",
-    image: "some image link here",
-  },
-  {
-    name: "Kampus C",
-    location: "kampus location",
-    image: "some image link here",
-  },
-  // Tambahkan data lainnya dari database sesuai dengan struktur yang sama
-];
+// const data = [
+//   {
+//     name: "Kampus A",
+//     location: "kampus location",
+//     image: "some image link here",
+//   },
+//   {
+//     name: "Kampus B",
+//     location: "kampus location",
+//     image: "some image link here",
+//   },
+//   {
+//     name: "Kampus C",
+//     location: "kampus location",
+//     image: "some image link here",
+//   },
+//   {
+//     name: "Kampus B",
+//     location: "kampus location",
+//     image: "some image link here",
+//   },
+//   {
+//     name: "Kampus C",
+//     location: "kampus location",
+//     image: "some image link here",
+//   },
+//   // Tambahkan data lainnya dari database sesuai dengan struktur yang sama
+// ];
 
 import KampusCard from "../partials/KampusCard";
+import getAllCampus from "../../model/getAllCampus";
 
 function Result() {
   return (
@@ -37,7 +38,7 @@ function Result() {
         Hasil Filter
       </h4>
       <div className="result grid  md:grid-cols-3 2xl:grid-cols-4 gap-8 py-10">
-        {data.map((kampus, index) => (
+        {getAllCampus.map((kampus, index) => (
           <KampusCard key={index} kampus={kampus} />
           // <div key={index} className="kampus">
           //   <div className="image">

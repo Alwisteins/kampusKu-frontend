@@ -9,7 +9,8 @@ type KampusCardProps = {
 
 type KampusType = {
   name: string;
-  location?: string;
+  kota: string;
+  provinsi: string;
   image?: string;
   akreditasi?: string;
   ranking?: number;
@@ -27,7 +28,7 @@ function KampusCard({ kampus }: KampusCardProps) {
         </h3>
         <span className="text-gray-500 text-sm flex items-center">
           <BiLocationPlus />
-          {kampus.location}
+          {kampus.kota + ', ' + kampus.provinsi}
         </span>
         <Link
           to="/kampus/slug-campus"
