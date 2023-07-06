@@ -3,6 +3,7 @@ import Button from "../base/button";
 import { cn } from "../../utils";
 import { input } from "../../utils/base";
 import Flexbox from "../base/Flexbox";
+import getProvince from "../../model/getProvince";
 
 function Filter() {
   return (
@@ -31,13 +32,12 @@ function Filter() {
         >
           <label htmlFor="provinsi">Provinsi</label>
           <select className={cn(input())}>
-            <option value="">Semua</option>
-            <option value="banten">Banten</option>
-            <option value="jakarta">Jakarta</option>
-            <option value="jawa barat">Jawa Barat</option>
-            <option value="jawa tengah">Jawa Tengah</option>
-            <option value="jawa timur">Jawa Timur</option>
-            <option value="Jogjakarta">Jogjakarta</option>
+            <option className={getProvince[0].provinsi} value="">Semua</option>
+            {
+              getProvince.map((province) => {
+                return <option className={province.provinsi} value="">{province.provinsi}</option>
+              })
+            }
           </select>
         </Flexbox>
 

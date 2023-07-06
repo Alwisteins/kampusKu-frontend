@@ -20,7 +20,7 @@ function KampusCard({ kampus }: KampusCardProps) {
   return (
     <div className="card shadow rounded-xl overflow-hidden bg-gradient-to-tr from-blue-100 via-white to-rose-50">
       <div className="img aspect-video">
-        <img src={satu} alt="satu" className="object-cover w-full h-full" />
+        <img src={kampus.image} alt={kampus.name} className="object-cover w-full h-full" />
       </div>
       <div className="px-6 py-3 flex flex-col gap-3">
         <h3 className="text-gray-800 font-bold text-xl uppercase">
