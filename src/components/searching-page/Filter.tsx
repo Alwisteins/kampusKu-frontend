@@ -4,6 +4,7 @@ import { cn } from "../../utils";
 import { input } from "../../utils/base";
 import Flexbox from "../base/Flexbox";
 import getProvince from "../../model/getProvince";
+import { handleSubmit } from "./handleSubmit";
 
 function Filter() {
   return (
@@ -17,7 +18,7 @@ function Filter() {
           className="md:flex-row flex-col md:items-center items-start md:mb-0 mb-3"
         >
           <label htmlFor="jenis">Jenis</label>
-          <select className={cn(input())}>
+          <select className={cn(input())} id="jenis">
             <option value="">Semua</option>
             <option value="Universitas">Universitas</option>
             <option value="Politeknik">Politeknik</option>
@@ -31,13 +32,17 @@ function Filter() {
           className="md:flex-row flex-col md:items-center items-start md:mb-0 mb-3"
         >
           <label htmlFor="provinsi">Provinsi</label>
-          <select className={cn(input())}>
-            <option className={getProvince[0].provinsi} value="">Semua</option>
-            {
-              getProvince.map((province) => {
-                return <option className={province.provinsi} value="">{province.provinsi}</option>
-              })
-            }
+          <select className={cn(input())} id="provinsi">
+            <option className={getProvince[0].provinsi} value="">
+              Semua
+            </option>
+            {getProvince.map((province) => {
+              return (
+                <option className={province.provinsi} value="">
+                  {province.provinsi}
+                </option>
+              );
+            })}
           </select>
         </Flexbox>
 
@@ -46,7 +51,7 @@ function Filter() {
           className="md:flex-row flex-col md:items-center items-start md:mb-0 mb-3"
         >
           <label htmlFor="akreditasi">Akreditasi</label>
-          <select className={cn(input())}>
+          <select className={cn(input())} id="akreditasi">
             <option value="">Semua</option>
             <option value="A">Akreditasi A</option>
             <option value="B">Akreditasi B</option>
@@ -59,7 +64,7 @@ function Filter() {
           className="md:flex-row flex-col md:items-center items-start md:mb-0 mb-3"
         >
           <label htmlFor="fakultas">Fakultas</label>
-          <select className={cn(input())}>
+          <select className={cn(input())} id="fakultas">
             <option value="">Semua</option>
             <option value="Teknik">Teknik</option>
             <option value="Ekonomi">Ekonomi</option>
@@ -67,7 +72,7 @@ function Filter() {
           </select>
         </Flexbox>
 
-        <Button className="rounded-xl">
+        <Button className="rounded-xl" onClick={handleSubmit}>
           <FaFilter />
           Filter
         </Button>
