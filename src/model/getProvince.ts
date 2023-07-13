@@ -1,8 +1,11 @@
+import { useState, useEffect } from 'react'
+
 interface Province {
   provinsi: string;
 }
 
 const getProvince: Province[] = [];
+export const getProvinceStorageKey = "getProvince";
 
 const fetchData = async () => {
   try {
@@ -15,12 +18,28 @@ const fetchData = async () => {
       return index === self.findIndex((p) => p.provinsi === province.provinsi);
     });
 
+    localStorage.setItem(getProvinceStorageKey, JSON.stringify(filteredProvinces));
+
     getProvince.push(...filteredProvinces);
   } catch (error) {
     console.log("Error fetching data:", error);
   }
 };
 
-fetchData();
+// State untuk menandai apakah data telah selesai di-fetch
+const [isDataFetched, setIsDataFetched] = useState(false);
 
-export default getProvince;
+useEffect(() => {
+  // Fetch data hanya jika array getProvince kosong
+  if (getProvince.length === 0) {
+    fetchData().then(() => {
+      setIsDataFetched(true);
+    });
+  } else {
+    setIsDataFetched(true);
+  }
+}, []);
+
+export default function useGetProvince(): [Province[], boolean] {
+  return [getProvince, isDataFetched];
+}
