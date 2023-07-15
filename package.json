@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "fake-api": "json-server -w fake-api.json -p 3001",
+    "fake-api": "npm i -g json-server && json-server -w fake-api.json -p 3001",
     "commit": "git add . && cz",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
