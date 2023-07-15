@@ -1,66 +1,88 @@
 import KampusCard from "../partials/KampusCard";
 
-const data = [
+const datas = [
   {
     name: "Kampus A",
     akreditasi: "Akreditasi A",
     ranking: 1,
-    location: "Campus Location",
+    lokasi: "Campus Location",
     image: "some image link here",
+    kota: "Kota Satu",
+    provinsi: "Provinsi Satu",
   },
   {
     name: "Kampus B",
-    location: "Campus Location",
+    lokasi: "Campus Location",
     akreditasi: "Akreditasi B",
     ranking: 2,
     image: "some image link here",
+    kota: "Kota Dua",
+    provinsi: "Provinsi Dua",
   },
   {
     name: "Kampus C",
-    location: "Campus Location",
+    lokasi: "Campus Location",
     akreditasi: "Akreditasi A",
     ranking: 3,
     image: "some image link here",
+    kota: "Kota Tiga",
+    provinsi: "Provinsi Tiga",
+  },
+  {
+    name: "Kampus A",
+    akreditasi: "Akreditasi A",
+    ranking: 1,
+    lokasi: "Campus Location",
+    image: "some image link here",
+    kota: "Kota Satu",
+    provinsi: "Provinsi Satu",
+  },
+  {
+    name: "Kampus B",
+    lokasi: "Campus Location",
+    akreditasi: "Akreditasi B",
+    ranking: 2,
+    image: "some image link here",
+    kota: "Kota Dua",
+    provinsi: "Provinsi Dua",
+  },
+  {
+    name: "Kampus C",
+    lokasi: "Campus Location",
+    akreditasi: "Akreditasi A",
+    ranking: 3,
+    image: "some image link here",
+    kota: "Kota Tiga",
+    provinsi: "Provinsi Tiga",
   },
   // Tambahkan data lainnya dari database sesuai dengan struktur yang sama
 ];
 
 const List = () => {
+  // const [data, setData] = useState<Kampus[]>([]);
+
+  // useEffect(() => {
+  //   async function getData() {
+  //     const res = await fetch("http://localhost:3001/kampus?_page=10&_limit=5");
+  //     const { kampus: data } = await res.json();
+  //     setData(data);
+  //   }
+  //   getData();
+  // }, []);
+
   return (
-    <div className="list md:px-0 px-3">
+    <div className="list md:px-0 px-3 min-h-screen">
       <h2 className="md:text-4xl text-3xl font-extrabold text-gray-800 capitalize mt-10">
         Daftar Kampus Rank Nasional
       </h2>
       <div className="result grid  md:grid-cols-3 2xl:grid-cols-4 gap-8 py-10">
-        {data.map((kampus, index) => (
+        {datas.map((kampus, index) => (
           <KampusCard key={index} kampus={kampus} />
+          // <RankCardSkeleton />
         ))}
       </div>
     </div>
   );
 };
-
-// const List = () => {
-//   return (
-//     <div className="list">
-//       <div className="header flex">
-//         <h2>Daftar Kampus</h2>
-//         <h2>Rank nasional</h2>
-//       </div>
-//       {data.map((kampus, index) => (
-//         <div key={index} className="kampus">
-//           <div className="image">
-//             <img src={kampus.image} alt="" />
-//           </div>
-//           <div className="name-akreditasi">
-//             <h3>{kampus.name}</h3>
-//             <p>{kampus.akreditasi}</p>
-//           </div>
-//           <p className="kampus-rank">{kampus.ranking}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
 
 export default List;

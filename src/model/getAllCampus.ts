@@ -1,4 +1,4 @@
-export interface kampus {
+export interface Kampus {
   id?: number;
   name?: string;
   tipe?: string;
@@ -12,7 +12,7 @@ export interface kampus {
   link?: string | null;
 }
 
-export const getAllCampus: kampus[] = [];
+export const getAllCampus: Kampus[] = [];
 
 // Fetch data into getCampusByFilter
 const fetchDataAllCampus = async () => {
@@ -21,7 +21,7 @@ const fetchDataAllCampus = async () => {
       "http://localhost:88/api/v1/campus/"
     );
     const json = await response.json();
-    const campus: Array<kampus> = json.kampus;
+    const campus: Array<Kampus> = json.kampus;
     campus.forEach((object) => {
       getAllCampus.push(object);
     });

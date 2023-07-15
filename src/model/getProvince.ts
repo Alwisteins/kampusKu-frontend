@@ -1,4 +1,4 @@
-interface Province {
+export interface Province {
   provinsi: string;
 }
 

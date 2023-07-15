@@ -29,11 +29,6 @@ function NavMenu({ isMobile }: { isMobile?: boolean }) {
       path: "/about",
       icon: <BiHelpCircle size={16} />,
     },
-    {
-      name: "Test",
-      path: "/test",
-      icon: <BsAndroid size={16} />,
-    },
   ];
 
   return menus.map((menu, index) => (

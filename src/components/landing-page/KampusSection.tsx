@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 function KampusSection() {
   return (
     <div className="container mx-auto">
-      <div className="kampusSetion min-h-screen grid md:grid-cols-2 items-center justify-center">
+      <div className="kampusSetion md:min-h-screen md:py-0 py-20 grid md:grid-cols-2 items-center justify-center">
         <div className="md:block flex items-center justify-center">
           <img
             className="w-full h-full object-cover"
@@ -32,7 +32,7 @@ function KampusSection() {
                 size: "lg",
                 variant: "primary",
               }),
-              "rounded-xl"
+              "md:mx-0 mx-auto"
             )}
           >
             Cari Tahu Disini <BsArrowRight />

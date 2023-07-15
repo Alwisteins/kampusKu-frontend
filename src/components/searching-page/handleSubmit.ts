@@ -1,10 +1,10 @@
-import { kampus, getAllCampus } from "../../model/getAllCampus";
+import { Kampus, getAllCampus } from "../../model/getAllCampus";
 
 //kalo value dataKampus =  getAllCampus.slice() maka state di Result.jsx harus array kosong
-const dataKampus: kampus[] = getAllCampus.slice();
+const dataKampus: Kampus[] = getAllCampus.slice();
 
-const getCampusByFilter: Array<kampus> = [];
-let url: string = "http://localhost:88/api/v1/campus/filter";
+const getCampusByFilter: Array<Kampus> = [];
+let url = "http://localhost:88/api/v1/campus/filter";
 
 export const handleSubmit = async (): Promise<void> => {
   const jenis = (document.getElementById("jenis") as HTMLSelectElement).value;
@@ -42,7 +42,7 @@ export const handleSubmit = async (): Promise<void> => {
   try {
     const response = await fetch(url);
     const json = await response.json();
-    const campuss: Array<kampus> = json.kampus;
+    const campuss: Array<Kampus> = json.kampus;
     campuss.forEach((campus) => getCampusByFilter.push(campus));
 
     // Mengganti nilai dataKampus dengan sesuai filter ketika disubmit
