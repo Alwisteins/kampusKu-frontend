@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Kampus } from "../../model/getAllCampus";
 import { getAllCampus } from "../../model/getAllCampus";
@@ -44,5 +43,5 @@ function Result() {
       </div> */}
     </div>
   );
-
+}
 export default Result;

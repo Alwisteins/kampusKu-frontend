@@ -97,13 +97,11 @@ const Filter = () => {
           </select>
         </Flexbox>
 
-            <Button className="rounded-xl" onClick={handleSubmit}>
-              <FaFilter />
-              Filter
-            </Button>
-          </form>
-        </>
-      )}
+        <Button className="rounded-xl" onClick={handleSubmit}>
+          <FaFilter />
+          Filter
+        </Button>
+      </form>
     </div>
   );
 };
