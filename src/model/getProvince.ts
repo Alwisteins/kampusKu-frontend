@@ -21,6 +21,6 @@ const fetchData = async () => {
   }
 };
 
-fetchData();
+// fetchData();
 
 export default getProvince;

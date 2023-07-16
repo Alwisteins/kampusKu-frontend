@@ -29,4 +29,4 @@ const fetchDataAllCampus = async () => {
     console.log("Error fetching data:", error);
   }
 };
-fetchDataAllCampus();
+// fetchDataAllCampus();

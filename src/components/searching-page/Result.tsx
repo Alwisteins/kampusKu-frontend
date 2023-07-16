@@ -4,7 +4,7 @@ import { getAllCampus } from "../../model/getAllCampus";
 import { button } from "../../utils/base";
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
-import Skeleton from "../partials/Skeleton";
+import Skeleton from "../ui/card-skeleton";
 
 function Result() {
   const [filteredData, setFilteredData] = useState<Kampus[]>(getAllCampus);

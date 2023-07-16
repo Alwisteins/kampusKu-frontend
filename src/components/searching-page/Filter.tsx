@@ -1,36 +1,34 @@
 import { FaFilter } from "react-icons/fa";
-import Button from "../base/button";
+import Button from "../ui/button";
 import { cn } from "../../utils";
 import { input } from "../../utils/base";
-import Flexbox from "../base/flexbox";
-// import getProvince, { Province } from "../../model/getProvince";
-import { handleSubmit } from "./handleSubmit";
-import { useEffect, useState } from "react";
+import Flexbox from "../ui/flexbox";
+import { handleSubmit } from "../../lib/handleSubmit";
+import { useState } from "react";
 import { Province } from "../../model/getProvince";
 import { IoIosArrowForward } from "react-icons/io";
-// import { useQuery } from "@tanstack/react-query";
-// import { fetcher } from "../../lib/fetcher";
+import { useQuery } from "@tanstack/react-query";
+import { getAllProvince } from "../../lib/handler/province.handler";
+import InternalServerError from "../error/500";
+import FilterSkeleton from "../ui/filter-skeleton";
 
 const Filter = () => {
-  const [provinsi, setProvinsi] = useState<Province[]>([]);
-  const [status, setStatus] = useState(false);
   const [collapse, setCollapse] = useState(true);
 
-  useEffect(() => {
-    // TODO : Lakukan fetch data yang diperlukan
-    async function getData() {
-      const res = await fetch("http://localhost:3001/provinsi");
-      // const provinsi = await res.json();
-      const { provinsi, status } = await res.json();
-      setProvinsi(provinsi);
-      setStatus(status);
-    }
+  const {
+    data: provinsi,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["get-all-province"],
+    queryFn: getAllProvince,
+  });
 
-    getData();
-  }, []);
+  // data state loading -> render loading UI
+  if (isLoading) return <FilterSkeleton />;
 
-  if (status == false) return <FilterSkeleton />;
-
+  // Jika fetcing data error
+  if (error) return <InternalServerError />;
   return (
     <div className="md:w-auto w-full">
       <button
@@ -67,7 +65,7 @@ const Filter = () => {
           <label htmlFor="provinsi">Provinsi</label>
           <select className={cn(input())} id="provinsi" name="provinsi">
             <option value="">Semua</option>
-            {provinsi.map((p) => {
+            {provinsi.map((p: Province) => {
               return <option value={p.provinsi}>{p.provinsi}</option>;
             })}
           </select>
@@ -105,23 +103,6 @@ const Filter = () => {
         </Button>
       </form>
     </div>
-  );
-};
-
-const FilterSkeleton = () => {
-  const filterField = [1, 2, 3, 4, 5];
-  return (
-    <>
-      <div className="w-1/3 animate-pulse mx-auto h-5 bg-gray-200 rounded-xl mb-5" />
-      <div className="grid md:grid-cols-5 grid-cols-1 animate-pulse items-center justify-center gap-5">
-        {filterField.map((item) => (
-          <div key={item} className="flex gap-x-3">
-            <div className="aspect-square h-10 bg-gray-200 rounded-xl" />
-            <div className="w-full h-10 bg-gray-200 rounded-xl" />
-          </div>
-        ))}
-      </div>
-    </>
   );
 };
 
