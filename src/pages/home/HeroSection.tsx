@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import banner from "../../assets/banner.svg";
 import { BsArrowRight } from "react-icons/bs";
 import { button } from "../../utils/base";
+import { cn } from "../../utils";
 
 function HeroSection() {
   return (
@@ -18,12 +19,17 @@ function HeroSection() {
           Temukan kampus impianmu dengan rekomendasi berbagai macam universitas,
           politeknik, institut, maupun akademi yang ada di indonesia disini
         </p>
-
-        <Link to={"/kampus"} className={button({ size: "xl", rounded: "lg" })}>
+        <Link
+          to={"/kampus"}
+          className={cn(
+            button({ size: "xl", rounded: "lg" }),
+            "md:mx-0 mx-auto"
+          )}
+        >
           Temukan Sekarang <BsArrowRight />
         </Link>
       </div>
-      <div className="aspect-square md:order-last order-first md:inline-block flex items-center justify-center">
+      <div className="aspect-square md:order-last md:pr-0 pr-5 order-first md:inline-block flex items-center justify-center">
         <img className="w-full h-full object-cover" src={banner} alt="banner" />
       </div>
     </div>

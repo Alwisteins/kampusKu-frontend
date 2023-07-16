@@ -6,7 +6,7 @@ import {
   BsArrowRight,
 } from "react-icons/bs";
 import { FaBuilding } from "react-icons/fa";
-import RankCard, { RankCardProps } from "../partials/RankCard";
+import RankCard, { RankCardProps } from "../../pages/rank/RankCard";
 import { Link } from "react-router-dom";
 import { button } from "../../utils/base";
 import { cn } from "../../utils";

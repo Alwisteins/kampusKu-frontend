@@ -16,4 +16,15 @@ function RankCard({ title, icon, description }: RankCardProps) {
   );
 }
 
+export function RankCardSkeleton() {
+  return (
+    <div className="grid gap-3">
+      <div className="aspect-video animate-pulse bg-gray-200 rounded-xl" />
+      <div className="h-8 w-2/3 bg-gray-200 animate-pulse rounded-xl" />
+      <div className="h-3 w-1/2 bg-gray-200 animate-pulse rounded-xl" />
+      <div className="h-5 w-1/3 bg-gray-200 animate-pulse rounded-xl" />
+    </div>
+  );
+}
+
 export default RankCard;

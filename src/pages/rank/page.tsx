@@ -1,4 +1,4 @@
-import List from "../components/ranking-page/List";
+import List from "./List";
 import { useEffect } from "react";
 
 function Rank() {

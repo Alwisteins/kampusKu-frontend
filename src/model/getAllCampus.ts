@@ -1,4 +1,4 @@
-export interface kampus {
+export interface Kampus {
   id?: number;
   name?: string;
   tipe?: string;
@@ -12,8 +12,7 @@ export interface kampus {
   link?: string | null;
 }
 
-export const getAllCampus: kampus[] = [];
-export const getAllCampusStorageKey = "getAllCampus";
+export const getAllCampus: Kampus[] = [];
 
 // Fetch data into getCampusByFilter
 const fetchDataAllCampus = async () => {
@@ -22,8 +21,8 @@ const fetchDataAllCampus = async () => {
       "http://localhost:88/api/v1/campus/"
     );
     const json = await response.json();
-    const campus: Array<kampus> = json.kampus;
-    localStorage.setItem(getAllCampusStorageKey, JSON.stringify(campus));
+    const campus: Array<Kampus> = json.kampus;
+
     campus.forEach((object) => {
       getAllCampus.push(object);
     });
@@ -31,7 +30,5 @@ const fetchDataAllCampus = async () => {
     console.log("Error fetching data:", error);
   }
 };
+// fetchDataAllCampus();
 
-if(getAllCampus.length == 0){
-  fetchDataAllCampus();
-}

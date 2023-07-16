@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
 
-interface Province {
+export interface Province {
   provinsi: string;
 }
 
@@ -26,8 +25,7 @@ const fetchData = async () => {
   }
 };
 
-// State untuk menandai apakah data telah selesai di-fetch
-const [isDataFetched, setIsDataFetched] = useState(false);
+// fetchData();
 
 useEffect(() => {
   // Fetch data hanya jika array getProvince kosong

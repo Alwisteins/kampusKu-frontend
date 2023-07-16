@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import HeroSection from "../components/landing-page/HeroSection";
-import RankSection from "../components/landing-page/RankSection";
-import KampusSection from "../components/landing-page/KampusSection";
+import HeroSection from "./HeroSection";
+import RankSection from "./RankSection";
+import KampusSection from "./KampusSection";
 
 function Home() {
   useEffect(() => {
